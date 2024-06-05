@@ -47,7 +47,7 @@ def check_tickets():
         deadline = created_time + resolution_time
         time_left = deadline - current_time
 
-        if time_left <= timedelta(hours=1):
+        if time_left <= timedelta(hours=2):
             if priority in ["high", "critical"]:
                 send_email_reminder(ticket, time_left)
                 schedule_reminder(ticket, time_left, interval=15)
